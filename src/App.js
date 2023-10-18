@@ -12,7 +12,6 @@ function App() {
         <Routes>
           <Route index path="/home" element={<HomePage></HomePage>}></Route>
           <Route path="/about" element={<AboutPage></AboutPage>}></Route>
-          <Route path="/contact" element={<ContactPage></ContactPage>}></Route>
           <Route path="*" element={<NoMatch></NoMatch>}></Route>
         </Routes>
       </BrowserRouter>
