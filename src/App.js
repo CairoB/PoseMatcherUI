@@ -1,8 +1,7 @@
 import "./App.css";
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
 import HomePage from "./components/pages/HomePage";
 import AboutPage from "./components/pages/AboutPage";
-import ContactPage from "./components/pages/ContactPage";
 import NoMatch from "./components/pages/NoMatch";
 
 function App() {
@@ -10,6 +9,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
+          <Route path="/" element={<Navigate replace to="/home" />} />
           <Route index path="/home" element={<HomePage></HomePage>}></Route>
           <Route path="/about" element={<AboutPage></AboutPage>}></Route>
           <Route path="*" element={<NoMatch></NoMatch>}></Route>
