@@ -3,7 +3,7 @@ import "../Placeholder.png";
 import { useState } from "react";
 
 export default function ImageUpload(props) {
-  const [preview, setPreview] = useState();
+  const [preview, setPreview] = useState("../Placeholder.png");
 
   const onImageChange = (event) => {
     if (event.target.files && event.target.files[0]) {
@@ -15,8 +15,8 @@ export default function ImageUpload(props) {
   return (
     <>
       <div style={{ width: "auto", height: "80%" }}>
-        <img style={{ maxHeight: "200px" }} src={preview}></img>
-        <br />
+        <img style={{ maxWidth: "400px" }} src={preview}></img>
+        <div style={{ height: "10px" }}></div>
         <Fab variant="extended" component="label">
           Upload
           <input
