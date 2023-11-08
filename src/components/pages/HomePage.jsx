@@ -2,6 +2,7 @@ import ImageUpload from "../ImageUpload";
 import BasePage from "./BasePage";
 import { useState } from "react";
 import { Fab } from "@mui/material";
+import { Link } from "react-router-dom";
 
 export default function HomePage(props) {
   const [imageOne, setImageOne] = useState();
@@ -41,6 +42,7 @@ export default function HomePage(props) {
                 marginBottom: "35px",
               }}
             ></div>
+            <Link to="/results">
             <Fab
               variant="extended"
               onClick={() => {
@@ -48,8 +50,9 @@ export default function HomePage(props) {
                 console.log(imageTwo);
               }}
             >
-              Sumbit
+              Submit
             </Fab>
+            </Link>
             <div style={{ height: "100px" }}></div>
           </>
         }
