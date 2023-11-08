@@ -1,11 +1,33 @@
 import { Fab } from "@mui/material";
 import "../Placeholder.png";
+import { useState } from "react";
 
 export default function ImageUpload(props) {
+  const [preview, setPreview] = useState("../Placeholder.png");
+
+  const onImageChange = (event) => {
+    if (event.target.files && event.target.files[0]) {
+      props.setImage(URL.createObjectURL(event.target.files[0]));
+      setPreview(URL.createObjectURL(event.target.files[0]));
+    }
+  };
+
   return (
     <>
-      <img></img>
-      <Fab variant="extended">Upload</Fab>
+      <div style={{ width: "auto", height: "80%" }}>
+        <img style={{ maxWidth: "400px" }} src={preview}></img>
+        <div style={{ height: "10px" }}></div>
+        <Fab variant="extended" component="label">
+          Upload
+          <input
+            hidden
+            type="file"
+            onChange={onImageChange}
+            id="file-input"
+            name="ImageStyle"
+          />
+        </Fab>
+      </div>
     </>
   );
 }
