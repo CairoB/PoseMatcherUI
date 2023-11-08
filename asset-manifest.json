@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/PoseMatcherUI/static/css/main.18c28722.css",
-    "main.js": "/PoseMatcherUI/static/js/main.dd6037fb.js",
+    "main.js": "/PoseMatcherUI/static/js/main.a82c70f3.js",
     "static/js/787.f0d21bc0.chunk.js": "/PoseMatcherUI/static/js/787.f0d21bc0.chunk.js",
     "index.html": "/PoseMatcherUI/index.html",
     "main.18c28722.css.map": "/PoseMatcherUI/static/css/main.18c28722.css.map",
-    "main.dd6037fb.js.map": "/PoseMatcherUI/static/js/main.dd6037fb.js.map",
+    "main.a82c70f3.js.map": "/PoseMatcherUI/static/js/main.a82c70f3.js.map",
     "787.f0d21bc0.chunk.js.map": "/PoseMatcherUI/static/js/787.f0d21bc0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.18c28722.css",
-    "static/js/main.dd6037fb.js"
+    "static/js/main.a82c70f3.js"
   ]
 }
