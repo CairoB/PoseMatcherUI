@@ -2,6 +2,8 @@ import axios from "axios";
 
 const URL = "";
 
+let instance = null;
+
 class ImageApi {
   submitImages(imageOne, imageTwo) {
     return axios
@@ -13,8 +15,10 @@ class ImageApi {
 }
 
 const getInstance = () => {
-  let instance = new ImageApi();
+  if (instance == null) {
+    instance = new ImageApi();
+  }
   return instance;
 };
 
-export default getInstance;
+export default getInstance();
