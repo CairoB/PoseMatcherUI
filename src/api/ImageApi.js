@@ -12,6 +12,14 @@ class ImageApi {
         return result;
       });
   }
+
+  returnResult() {
+    return axios
+      .get(`URL/result`)
+      .then((result) => {
+        return result;
+      });
+  }
 }
 
 const getInstance = () => {
