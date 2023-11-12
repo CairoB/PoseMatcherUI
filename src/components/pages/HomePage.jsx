@@ -3,10 +3,12 @@ import BasePage from "./BasePage";
 import { useState } from "react";
 import { Fab } from "@mui/material";
 import { Link } from "react-router-dom";
+import ImageApi from "../../api/ImageApi";
 
 export default function HomePage(props) {
   const [imageOne, setImageOne] = useState();
   const [imageTwo, setImageTwo] = useState();
+  const imageApi = ImageApi();
 
   return (
     <>
@@ -43,15 +45,14 @@ export default function HomePage(props) {
               }}
             ></div>
             <Link to="/results">
-            <Fab
-              variant="extended"
-              onClick={() => {
-                console.log(imageOne);
-                console.log(imageTwo);
-              }}
-            >
-              Submit
-            </Fab>
+              <Fab
+                variant="extended"
+                onClick={() => {
+                  imageApi.submitImages(imageOne, imageTwo);
+                }}
+              >
+                Submit
+              </Fab>
             </Link>
             <div style={{ height: "100px" }}></div>
           </>

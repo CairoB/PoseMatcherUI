@@ -1,25 +1,23 @@
 import axios from "axios";
 
-const URL = "";
+const URL = "http://localhost:5000";
 
 let instance = null;
 
 class ImageApi {
-  submitImages(imageOne, imageTwo) {
+  submitImages = async (imageOne, imageTwo) => {
     return axios
-      .post(`URL/upload`, { imageOne: imageOne, imageTwo: imageTwo })
+      .post(`${URL}/upload`, { imageOne: imageOne, imageTwo: imageTwo })
       .then((result) => {
         return result;
       });
-  }
+  };
 
-  returnResult() {
-    return axios
-      .get(`URL/result`)
-      .then((result) => {
-        return result;
-      });
-  }
+  returnResult = async () => {
+    return axios.get(`${URL}/result`).then((result) => {
+      return result;
+    });
+  };
 }
 
 const getInstance = () => {
