@@ -8,7 +8,7 @@ import ImageApi from "../../api/ImageApi";
 export default function HomePage(props) {
   const [imageOne, setImageOne] = useState();
   const [imageTwo, setImageTwo] = useState();
-  const imageApi = ImageApi();
+  const imageApi = ImageApi.getInstance();
 
   return (
     <>
