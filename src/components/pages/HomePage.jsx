@@ -8,7 +8,6 @@ import ImageApi from "../../api/ImageApi";
 export default function HomePage(props) {
   const [imageOne, setImageOne] = useState();
   const [imageTwo, setImageTwo] = useState();
-  const imageApi = ImageApi.getInstance();
 
   return (
     <>
@@ -48,7 +47,7 @@ export default function HomePage(props) {
               <Fab
                 variant="extended"
                 onClick={() => {
-                  imageApi.submitImages(imageOne, imageTwo);
+                  ImageApi.submitImages(imageOne, imageTwo);
                 }}
               >
                 Submit

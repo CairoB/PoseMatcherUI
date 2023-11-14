@@ -10,13 +10,23 @@ class ImageApi {
       .post(`${URL}/upload`, { imageOne: imageOne, imageTwo: imageTwo })
       .then((result) => {
         return result;
+      })
+      .catch((e) => {
+        console.log(
+          `There was an issue sending the images to the backend at ${URL}/upload`
+        );
       });
   };
 
   returnResult = async () => {
-    return axios.get(`${URL}/result`).then((result) => {
-      return result;
-    });
+    return axios
+      .get(`${URL}/result`)
+      .then((result) => {
+        return result;
+      })
+      .catch((e) => {
+        console.log(`Results could not be fetched from ${URL}/result`);
+      });
   };
 }
 
