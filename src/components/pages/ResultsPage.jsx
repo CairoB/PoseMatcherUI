@@ -21,7 +21,7 @@ export default function ResultsPage(props) {
           <div>
             {(() => {
               console.log(data);
-              return status == "loading" ? (
+              return status === "loading" ? (
                 <Typography
                   variant="h3"
                   align="center"
@@ -30,7 +30,7 @@ export default function ResultsPage(props) {
                 >
                   We're calculating your results now...
                 </Typography>
-              ) : status == "error" ? (
+              ) : status === "error" ? (
                 <>
                   <Typography
                     variant="h2"
