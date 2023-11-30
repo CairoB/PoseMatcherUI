@@ -7,26 +7,31 @@ let instance = null;
 class ImageApi {
   submitImages = async (imageOne, imageTwo) => {
     return axios
-      .post(`${URL}/upload`, { imageOne: imageOne, imageTwo: imageTwo })
+      .post(`${URL}/upload`, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: { source: imageOne, test: imageTwo },
+      })
       .then((result) => {
         return result;
       })
       .catch((e) => {
         console.log(
-          `There was an issue sending the images to the backend at ${URL}/upload`
+          `There was an issue sending the images to the backend at ${URL}/upload\n${e}`
         );
       });
   };
 
   returnResult = async () => {
-    return axios
-      .get(`${URL}/result`)
-      .then((result) => {
-        return result;
-      })
-      .catch((e) => {
-        console.log(`Results could not be fetched from ${URL}/result`);
-      });
+    // return axios
+    //   .get(`${URL}/result`)
+    //   .then((result) => {
+    //     return result;
+    //   })
+    //   .catch((e) => {
+    //     console.log(`Results could not be fetched from ${URL}/result`);
+    //   });
   };
 }
 

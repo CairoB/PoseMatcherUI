@@ -5,6 +5,15 @@ import { Fab } from "@mui/material";
 import { Link } from "react-router-dom";
 import ImageApi from "../../api/ImageApi";
 
+const readAndEncodeImage = async (input) => {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = (e) => resolve(e.target.result.split(",")[1]);
+    reader.onerror = reject;
+    reader.readAsDataURL(input.files[0]);
+  });
+};
+
 export default function HomePage(props) {
   const [imageOne, setImageOne] = useState();
   const [imageTwo, setImageTwo] = useState();
@@ -46,8 +55,11 @@ export default function HomePage(props) {
             <Link to="/results">
               <Fab
                 variant="extended"
-                onClick={() => {
-                  ImageApi.submitImages(imageOne, imageTwo);
+                onClick={async () => {
+                  let dataOne = await readAndEncodeImage(imageOne);
+                  let dataTwo = await readAndEncodeImage(imageTwo);
+                  console.log(dataOne, dataTwo);
+                  ImageApi.submitImages(dataOne, dataTwo);
                 }}
               >
                 Submit
