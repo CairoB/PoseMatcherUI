@@ -1,4 +1,5 @@
 import NavButton from "./NavButton";
+import textLogo from "../PosematcherTextLogo.jpg"
 
 export default function Navbar(props) {
   return (
@@ -30,7 +31,11 @@ export default function Navbar(props) {
               flexWrap: "wrap",
             }}
           >
-            <h1>Posematcher</h1>
+            <img
+              src={textLogo}
+              alt="Posematcher Text"
+              style={{ maxHeight: "60px" }} 
+            />
           </div>
 
           <div
