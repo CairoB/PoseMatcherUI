@@ -20,7 +20,6 @@ export default function ResultsPage(props) {
         content={
           <div>
             {(() => {
-              console.log(data);
               return status === "loading" ? (
                 <Typography
                   variant="h3"

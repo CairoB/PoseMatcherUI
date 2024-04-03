@@ -6,9 +6,11 @@ export default function ImageUpload(props) {
   const [preview, setPreview] = useState("../Placeholder.png");
 
   const onImageChange = (event) => {
-    if (event.target.files && event.target.files[0]) {
-      props.setImage(URL.createObjectURL(event.target.files[0]));
-      setPreview(URL.createObjectURL(event.target.files[0]));
+    if (event.target) {
+      if (event.target.files) {
+        props.setImage(event.target);
+        setPreview(URL.createObjectURL(event.target.files[0]));
+      }
     }
   };
 
