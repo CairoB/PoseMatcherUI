@@ -1,9 +1,9 @@
 import { Fab } from "@mui/material";
-import "../Placeholder.png";
+import placeholder from "../Placeholder.png";
 import { useState } from "react";
 
 export default function ImageUpload(props) {
-  const [preview, setPreview] = useState("../Placeholder.png");
+  const [preview, setPreview] = useState(placeholder);
 
   const onImageChange = (event) => {
     if (event.target) {
