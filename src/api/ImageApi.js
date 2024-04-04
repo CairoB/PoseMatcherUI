@@ -1,25 +1,28 @@
 import axios from "axios";
 
-const URL = "http://localhost:5000";
+const URL = "http://136.36.163.7:25565";
 
 let instance = null;
 
 class ImageApi {
   submitImages = async (imageOne, imageTwo) => {
     return axios
-      .post(`${URL}/upload`, {
+      .post(`${URL}/infer`, {
         headers: {
           "Content-Type": "application/json",
         },
-        body: { source: imageOne, test: imageTwo },
+        image1: imageOne,
+        image2: imageTwo,
       })
       .then((result) => {
+        console.log(result)
         return result;
       })
       .catch((e) => {
         console.log(
-          `There was an issue sending the images to the backend at ${URL}/upload\n${e}`
+          `There was an issue sending the images to the backend at ${URL}/infer`
         );
+        console.log(e)
       });
   };
 
