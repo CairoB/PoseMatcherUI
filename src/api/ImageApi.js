@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URL = "http://136.36.163.7:25565";
+const URL = "https://136.36.163.7:25565";
 
 let instance = null;
 
