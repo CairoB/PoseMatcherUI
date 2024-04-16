@@ -2,7 +2,7 @@ import ImageUpload from "../ImageUpload";
 import BasePage from "./BasePage";
 import { useState, useEffect } from "react";
 import { Fab } from "@mui/material";
-import { Link, redirect } from "react-router-dom";
+// import { Link, redirect } from "react-router-dom";
 import ImageApi from "../../api/ImageApi";
 
 const readAndEncodeImage = async (input) => {
@@ -36,8 +36,8 @@ export default function HomePage(props) {
             {viewResults ? (
               <>
                 <h1>Score: {result.data ? result.data.MJPE : 'loading...'}</h1>
-                <img src={`data:image/jpg;base64,${result.data.viz1}`}></img>
-                <img src={`data:image/jpg;base64,${result.data.viz2}`}></img>
+                <img src={`data:image/jpg;base64,${result.data.viz1}`} alt='visualization'></img>
+                <img src={`data:image/jpg;base64,${result.data.viz2}`} alt='visualization'></img>
               </>
             ) : (
                 <>
