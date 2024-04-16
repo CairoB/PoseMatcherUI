@@ -17,7 +17,7 @@ export default function ImageUpload(props) {
   return (
     <>
       <div style={{ width: "auto", height: "80%" }}>
-        <img style={{ maxWidth: "400px" }} src={preview}></img>
+        <img style={{ maxWidth: "400px" }} src={preview} alt='placeholder'></img>
         <div style={{ height: "10px" }}></div>
         <Fab variant="extended" component="label">
           Upload

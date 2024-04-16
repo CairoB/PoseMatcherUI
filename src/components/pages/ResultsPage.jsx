@@ -1,7 +1,7 @@
-import { Container } from "@mui/material";
+// import { Container } from "@mui/material";
 import BasePage from "../pages/BasePage";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
+// import Button from "@mui/material/Button";
 import { useEffect } from "react";
 import { useQuery } from "react-query";
 import ImageApi from "../../api/ImageApi";
@@ -11,7 +11,7 @@ export default function ResultsPage(props) {
 
   useEffect(() => {
     console.log(status);
-  }, [data]);
+  }, [data, status]);
 
   return (
     <>
@@ -51,8 +51,8 @@ export default function ResultsPage(props) {
                   </Typography>
                 </>
               ) : (
-                data
-              );
+                    data
+                  );
             })()}
           </div>
         }
