@@ -7,7 +7,7 @@ export default function NoMatch(props) {
     <>
       <h3>This part of the site doesn't exist!</h3>
       <h2>HTTP 404</h2>
-      <Button href={`${baseURL}/home`}>Return to home</Button>
+      <Button href={`${baseURL}/#/home`}>Return to home</Button>
     </>
   );
 }
