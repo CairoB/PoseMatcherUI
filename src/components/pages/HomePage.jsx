@@ -1,7 +1,7 @@
 import ImageUpload from "../ImageUpload";
 import BasePage from "./BasePage";
 import { useState, useEffect } from "react";
-import { Fab } from "@mui/material";
+import { Button, CircularProgress } from "@mui/material";
 // import { Link, redirect } from "react-router-dom";
 import ImageApi from "../../api/ImageApi";
 
@@ -19,6 +19,8 @@ export default function HomePage(props) {
   const [imageTwo, setImageTwo] = useState();
   const [result, setResult] = useState({})
   const [viewResults, setViewResults] = useState(false)
+  const [calculating, setCalculating] = useState(false)
+  const [disableSubmit, setDisableSubmit] = useState(true)
 
   useEffect(() => {
     if (result.data) {
@@ -26,6 +28,12 @@ export default function HomePage(props) {
       setViewResults(true)
     }
   }, [result])
+
+  useEffect(() => {
+    if (imageOne && imageTwo) {
+      setDisableSubmit(false)
+    }
+  }, [imageOne, imageTwo])
 
   return (
     <>
@@ -41,45 +49,58 @@ export default function HomePage(props) {
               </>
             ) : (
                 <>
-                  <h2>Pose Match</h2>
-                  <div
-                    style={{
-                      display: "flex",
-                      alignContent: "center",
-                      justifyContent: "space-evenly",
-                      flexWrap: "wrap",
-                    }}
-                  >
-                    <ImageUpload
-                      image={imageOne}
-                      setImage={setImageOne}
-                    ></ImageUpload>
-                    <ImageUpload
-                      image={imageTwo}
-                      setImage={setImageTwo}
-                    ></ImageUpload>
-                  </div>
-                  <div
-                    style={{
-                      backgroundColor: "lightgray",
-                      height: "2px",
-                      width: "80%",
-                      margin: "auto",
-                      marginTop: "35px",
-                      marginBottom: "35px",
-                    }}
-                  ></div>
-                  <Fab
-                    variant="extended"
-                    onClick={async () => {
-                      let dataOne = await readAndEncodeImage(imageOne);
-                      let dataTwo = await readAndEncodeImage(imageTwo);
-                      let temp = await ImageApi.submitImages(dataOne, dataTwo);
-                      setResult(temp)
-                    }}
-                  >
-                    Submit
-                </Fab>
+                  {
+                    calculating ? (
+                      <>
+                        <CircularProgress></CircularProgress>
+                      </>
+                    ) : (
+                        <>
+                          <h2>Pose Match</h2>
+                          <div
+                            style={{
+                              display: "flex",
+                              alignContent: "center",
+                              justifyContent: "space-evenly",
+                              flexWrap: "wrap",
+                            }}
+                          >
+                            <ImageUpload
+                              image={imageOne}
+                              setImage={setImageOne}
+                            ></ImageUpload>
+                            <ImageUpload
+                              image={imageTwo}
+                              setImage={setImageTwo}
+                            ></ImageUpload>
+                          </div>
+                          <div
+                            style={{
+                              backgroundColor: "lightgray",
+                              height: "2px",
+                              width: "80%",
+                              margin: "auto",
+                              marginTop: "35px",
+                              marginBottom: "35px",
+                            }}
+                          ></div>
+                          <Button
+                            disabled={disableSubmit}
+                            variant="contained"
+                            onClick={async () => {
+                              setCalculating(true)
+                              setDisableSubmit(true)
+                              let dataOne = await readAndEncodeImage(imageOne);
+                              let dataTwo = await readAndEncodeImage(imageTwo);
+                              let temp = await ImageApi.submitImages(dataOne, dataTwo);
+                              setResult(temp)
+                            }}
+                          >
+                            Submit
+                  </Button>
+                        </>
+                      )
+                  }
                 </>
               )}
             <div style={{ height: "100px" }}></div>

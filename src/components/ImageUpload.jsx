@@ -1,4 +1,4 @@
-import { Fab } from "@mui/material";
+import { Button } from "@mui/material";
 import placeholder from "../Placeholder.png";
 import { useState } from "react";
 
@@ -19,7 +19,7 @@ export default function ImageUpload(props) {
       <div style={{ width: "auto", height: "80%" }}>
         <img style={{ maxWidth: "400px" }} src={preview} alt='placeholder'></img>
         <div style={{ height: "10px" }}></div>
-        <Fab variant="extended" component="label">
+        <Button variant="outlined" component="label">
           Upload
           <input
             hidden
@@ -28,7 +28,7 @@ export default function ImageUpload(props) {
             id="file-input"
             name="ImageStyle"
           />
-        </Fab>
+        </Button>
       </div>
     </>
   );
