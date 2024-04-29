@@ -2,6 +2,7 @@ import { Container } from "@mui/material";
 import BasePage from "../pages/BasePage";
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import { Link } from "react-router-dom";
 
 export default function AboutPage(props) {
   return (
@@ -23,7 +24,9 @@ export default function AboutPage(props) {
             <Typography variant="h5" align="center" color="textSecondary" paragraph>
             In a world where innovation is key, time is of the essence. Rather than reinventing the wheel, we offer developers a dependable foundation to build upon. Our tools leverage the power of the open-source MMPose project, making it easier than ever to jumpstart your own human pose estimation models. We want to help you save time and resources, allowing you to focus on what truly matters - pushing the boundaries of what's possible. With PoseMatcher, you can trust that your tools will evolve with you, ensuring long-term success.
             </Typography>
+            <Link to="/contact" style={{ textDecoration: 'none' }}>
             <Button sx={{ color:'gray', border:"2px gray solid"}} variant="outlined">Contact Us</Button>
+            </Link>
           </Container>
         </div>
       }
