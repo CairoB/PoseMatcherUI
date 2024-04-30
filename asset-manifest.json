@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/PoseMatcherUI/static/css/main.18c28722.css",
-    "main.js": "/PoseMatcherUI/static/js/main.8bde5976.js",
+    "main.css": "/PoseMatcherUI/static/css/main.7d27fc69.css",
+    "main.js": "/PoseMatcherUI/static/js/main.1798f0a6.js",
     "static/js/787.f0d21bc0.chunk.js": "/PoseMatcherUI/static/js/787.f0d21bc0.chunk.js",
     "static/media/PosematcherTextLogo.jpg": "/PoseMatcherUI/static/media/PosematcherTextLogo.4ea14479de60e2cc5075.jpg",
     "index.html": "/PoseMatcherUI/index.html",
-    "main.18c28722.css.map": "/PoseMatcherUI/static/css/main.18c28722.css.map",
-    "main.8bde5976.js.map": "/PoseMatcherUI/static/js/main.8bde5976.js.map",
+    "main.7d27fc69.css.map": "/PoseMatcherUI/static/css/main.7d27fc69.css.map",
+    "main.1798f0a6.js.map": "/PoseMatcherUI/static/js/main.1798f0a6.js.map",
     "787.f0d21bc0.chunk.js.map": "/PoseMatcherUI/static/js/787.f0d21bc0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.18c28722.css",
-    "static/js/main.8bde5976.js"
+    "static/css/main.7d27fc69.css",
+    "static/js/main.1798f0a6.js"
   ]
 }
