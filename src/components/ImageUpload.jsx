@@ -19,7 +19,7 @@ export default function ImageUpload(props) {
       <div style={{ width: "auto", height: "80%" }}>
         <img style={{ maxWidth: "400px" }} src={preview} alt='placeholder'></img>
         <div style={{ height: "10px" }}></div>
-        <Button  sx={{ color:'gray', border:"2px gray solid"}} variant="outlined" component="label">
+        <Button sx={{ color: 'gray', border: "1px gray solid" }} variant="outlined" component="label">
           Upload
           <input
             hidden
