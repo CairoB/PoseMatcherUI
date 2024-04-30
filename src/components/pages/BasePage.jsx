@@ -2,6 +2,9 @@ import Navbar from "../Navbar";
 import Footer from "../Footer";
 import { Link } from "react-router-dom";
 
+
+// BasePage is the frame that contains other page content
+// It includes the navbar and footer that appear on every page on the site.
 export default function BasePage(props) {
   return (
     <>
@@ -18,7 +21,7 @@ export default function BasePage(props) {
                 marginBottom: "auto",
               }}
             >
-              <Link to="/copyright" style={{ color: "white", textDecoration: 'none'}}>
+              <Link to="/copyright" style={{ color: "white", textDecoration: 'none' }}>
                 Copyright © 2024
               </Link>
             </div>
@@ -30,13 +33,13 @@ export default function BasePage(props) {
               }}
             >
               <span style={{ margin: "10px" }}>
-              <Link to="/privacy" style={{ color: "white", textDecoration: 'none' }}>
-                Privacy
+                <Link to="/privacy" style={{ color: "white", textDecoration: 'none' }}>
+                  Privacy
               </Link>
               </span>
               <span style={{ margin: "10px" }}>
-              <Link to="/contact" style={{ color: "white", textDecoration: 'none' }}>
-                Contact
+                <Link to="/contact" style={{ color: "white", textDecoration: 'none' }}>
+                  Contact
               </Link>
               </span>
             </div>

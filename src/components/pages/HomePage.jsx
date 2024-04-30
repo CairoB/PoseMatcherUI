@@ -2,9 +2,11 @@ import ImageUpload from "../ImageUpload";
 import BasePage from "./BasePage";
 import { useState, useEffect } from "react";
 import { Button, CircularProgress } from "@mui/material";
-// import { Link, redirect } from "react-router-dom";
 import ImageApi from "../../api/ImageApi";
 
+
+// readAndEncodeImage takes uploaded image data and
+// converts it into a format readable by the backend.
 const readAndEncodeImage = async (input) => {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
@@ -14,6 +16,13 @@ const readAndEncodeImage = async (input) => {
   });
 };
 
+
+// HomePage is where users can interact with our backend server and try Posematcher for themselves.
+// Currently, this website demo features the ability to compare two image poses and view the AI
+// three-dimensional visualization used in our calculations.
+//
+// We trigger the calculations on the server by calling ImageApi.submitImages().
+// See the class definition for ImageApi to read more details.
 export default function HomePage(props) {
   const [imageOne, setImageOne] = useState();
   const [imageTwo, setImageTwo] = useState();
