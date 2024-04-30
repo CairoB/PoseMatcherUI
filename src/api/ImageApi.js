@@ -1,7 +1,7 @@
 import axios from "axios";
-import https from "https";
+// import https from "https";
 
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+// process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
 const URL = "https://unmedicated-person.us";
 
@@ -16,7 +16,7 @@ class ImageApi {
         },
         image1: imageOne,
         image2: imageTwo,
-        httpsAgent: new https.Agent({ rejectUnauthorized: false })
+        // httpsAgent: new https.Agent({ rejectUnauthorized: false })
       })
       .then((result) => {
         console.log(result)
