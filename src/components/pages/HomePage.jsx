@@ -85,8 +85,9 @@ export default function HomePage(props) {
                             }}
                           ></div>
                           <Button
+                            sx={{ color: 'gray', border: "1px gray solid" }}
                             disabled={disableSubmit}
-                            variant="contained"
+                            variant="outlined"
                             onClick={async () => {
                               setCalculating(true)
                               setDisableSubmit(true)
