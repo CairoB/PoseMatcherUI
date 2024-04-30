@@ -2,6 +2,8 @@ import { Button } from "@mui/material";
 
 const baseURL = "https://cairob.github.io/PoseMatcherUI";
 
+
+// This is our 404 page. Any slug that is not matched by react-router-dom's HashRouter will display this page.
 export default function NoMatch(props) {
   return (
     <>
